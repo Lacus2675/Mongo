@@ -1,0 +1,107 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+        <link rel="stylesheet" href="/css/estilos.css">
+            
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <title>Productos</title>
+    </head>
+    <body >
+        
+      <nav class="navbar navbar-expand-lg" style="background-color: #ffcc00; height: 70px">
+        <div class="container-fluid">
+           <strong> <a class="navbar-brand" href="#" style="color: black;"><%= producto.marca %></a>
+           </strong>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                       <strong><a class="nav-link active" aria-current="page" href="/products" style="color: black;">Inicio</a>
+                      </strong>
+                      </li>
+                    <!--li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true" style="color: black;">Link</a>
+                    </li--> 
+                </ul>
+    
+    
+    
+    
+            </div>
+        </div>
+    </nav>
+    
+
+    
+    
+    <div class="container"  style="margin-bottom: 35px ; ">
+        
+      <div class="row row-cols-1 row-cols-md-2" >
+      
+          <div class = "card p-5 my-5 border-0">
+            <img  src="<%= producto.imagen %>" >   
+          </div>    
+
+          <!---------------------------------------------------------------------------------->
+
+          <div clas="card p-5 my-5 border" >     
+            <br><br>
+            <h1>Editar Producto</h1>
+            <p>Edite cambiando el campo , en el campo imagen coloque /img/imagen.jpg </p>
+            <p>donde imgen.jpg es la imagen que se quiere elejir, la imagen tiene que ser copiada a public/img</p>
+            
+          
+    
+        <form action="/products/<%= producto._id %>?_method=PUT" method="POST">
+
+
+
+        <strong><label class="form-label" for="imagen">Imagen:</label></strong> 
+        <input class="form-control" type="text" id="imagen" name="producto[imagen]" value="<%= producto.imagen %>">
+        
+        <label for="marca">Marca:</label>
+        <input class="form-control" type="text" id="marca" name="producto[marca]" value="<%= producto.marca %>">
+
+        <label for="modelo">Modelo:</label>
+        <input class="form-control" type="text" id="modelo" name="producto[modelo]" value="<%= producto.modelo %>">
+
+        <label for="precio">Precio:</label>
+        <input class="form-control" type="text" id="precio" name="producto[precio]" value="<%= producto.precio %>">
+        
+        <br><br>
+        <button class="btn btn-info" type="submit">Actualizar Producto</button>
+
+    </form>
+    </div>
+    </div>
+</div>
+
+
+    <footer>
+        <br>
+        <p>&copy; 2023 Mi Sitio Web</p>
+        <div>
+            <i class="whatsapp-icon fa fa-whatsapp"></i>
+            <span>Preguntas Contáctanos en WhatsApp</span>
+        </div>
+        <br>
+        <a href="https://api.whatsapp.com/send?phone=1500000000&text=Hola%2C%20estoy%20interesado%20en%20tu%20servicio"
+           class="whatsapp" target="_blank">
+            <i class="fa fa-whatsapp whatsapp-icon"></i>
+        </a>
+      </footer>
+      
+</body>
+
+</html>
+
+
